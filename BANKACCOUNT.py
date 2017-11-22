@@ -26,7 +26,12 @@ class BankAccount:
     def deposit(self, amount):
         self.set_balance((self.get_balance() + amount)*(1+self.__interest_rate/100))
     def withdraw(self, amount):
-        self.__balance = self.__balance - amount
+        if self.__balance - amount < 0:
+            print('You cannot withdraw more than you have in the account')
+        else:
+            self.__balance = self.__balance - amount
 
     def __str__(self):
-        return 'For '+self.__account_number+' your balance is: ' + str(self.__balance)
+        #return 'For the '+str(self.__account_number)+' your balance is: ' + str(self.__balance)
+        s = 'account: {}, balance: {:4d}, minimum balance {:3d}, interest rate(%): {:2d}'
+        return s.format(self.__account_number, self.__balance, self.__minimum_balance, self.__interest_rate)
