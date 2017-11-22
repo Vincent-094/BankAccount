@@ -4,14 +4,23 @@ class CheckingAccount(BankAccount):
     def __init__(self, account_number, balance, interest_rate, minimum_balance):
         BankAccount.__init__(self, account_number, balance, interest_rate, minimum_balance)
 
-    def writeCheck(self, check_amount):
+    def write_check(self, check_amount):
         self.__balance = self.__balance - check_amount
+
+    #def __str__(self):
+        #s = 'account: {}, balance: {}, minimum balance {}, interest: {}'
+        #return s.format(self.__account_number, self.__balance, self.__minimum_balance, self.__interest_rate)
+        #return 'For the '+ str(self.__account_number) +\
+        #'your balance is ' + str(self.__balance) +\
+        #'your interest is ' + str(self.__interest_rate) +\
+        #'with a minimum balance of ' + str(self.__minimum_balance)
 
 class ServiceChargeChecking(CheckingAccount):
     def __init__(self, account_number, balance, interest_rate, minimum_balance):
         CheckingAccount.__init__(self, account_number, balance, interest_rate, minimum_balance)
-    interest_rate = None
-    minimum_balance = None
+    #def __str__(self):
+        #s = 'account: {}, balance: {}, minimum balance {}, interest: {}'
+        #return s.format(self.__account_number, self.__balance, self.__minimum_balance, self.__interest_rate)
 
 class NoServiceChargeChecking(CheckingAccount):
     def __init__(self, account_number, balance, interest_rate, minimum_balance):
@@ -36,11 +45,11 @@ class CertificateOfDeposit(BankAccount):
         self.__current_month = current_month
 
     def set_maturity_month(self, maturity_month):
-        self.__maturity_month = maturity month
+        self.__maturity_month = maturity_month
     def get_maturity_month(self):
         return self.__maturity_month
 
-    def set_current_month(self, current_month)
+    def set_current_month(self, current_month):
         self.__current_month = current_month
     def get_current_month(self):
         return self.__current_month
