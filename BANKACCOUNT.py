@@ -33,5 +33,5 @@ class BankAccount:
 
     def __str__(self):
         #return 'For the '+str(self.__account_number)+' your balance is: ' + str(self.__balance)
-        s = 'account: {}, balance: {:4d}, minimum balance {:3d}, interest rate(%): {:2d}'
+        s = 'Account: {} Balance: {:<4.2f}, Minimum balance: {:<6.2f}, Interest rate (%): {:<2.2f}'
         return s.format(self.__account_number, self.__balance, self.__minimum_balance, self.__interest_rate)
